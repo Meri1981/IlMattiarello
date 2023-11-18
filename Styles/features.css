@@ -1,0 +1,45 @@
+.features{
+    margin-top: 10rem;  /*este margen me separa la tarjeta o la seccion de los tomates*/
+}
+
+.features-wrapper{  /*es el contenedor de todas las caracteristicas*/
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.feature{
+    text-align: center;
+    padding: 0 1rem;  /*la img, y el contenido en general, deja de estar pegada a los bordes horizontales*/
+}
+
+.feature > img{
+    width: 100%;  /*que ocupe el 100% del padre div */
+    border-radius: 20px;
+    max-width: 450px;  /*para q lo max q se agrande la img cuando se agranda la pantalla sea de 450px*/
+    aspect-ratio: 2/3;  /*hace una relacion 2 a 3 de la img para q no sea cuadrada*/
+    object-fit: cover;  /*ajusta la imagen al lugar q ocupa para q no este deformada*/
+}
+
+.feature-title{
+    font-size: 2rem;
+}
+
+.feature > p{
+    padding: 1rem 0;
+}
+
+/*ahora para acondicionar las caracteristicas en pantallas grandes desde tablet para arriba, lo paso a grid, solo en caracteristicas xq es lo q queda feo con flex*/
+@media (min-width: 768px){
+    .features-wrapper{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1rem;
+    }                                                /*diseño completamente risponsive en caracteristicas*/
+}
+
+
+
+
+
+

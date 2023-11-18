@@ -1,0 +1,99 @@
+/*hero de comienzo*/
+
+.hero{
+    position: relative;   
+    /*padding-bottom: 4rem;    esto bagranda el hero por debajo para q entren las img pero elijo usar el traslate*/
+}
+
+
+.plate-wrapper{
+    position: relative;  /*para que todos sus hijos se posicionen en absoluto*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.plate{
+    width: 120px;
+    height: auto;
+    padding: 1rem 0;
+}
+
+
+.plate-circle{
+    background-color: var(--primary-color);
+    width: 100%; /* 100% del ancho del padre "plate-wrapper"*/
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    border-radius: 0 0 50% 50%;
+    transform: translate(0, -45%);
+
+
+}
+
+
+.hero-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /*coloca los elemntos en el centro*/
+    align-items: center;  /*coloca el boton en el centro*/
+    gap: 1.5rem;
+    
+}
+
+
+.hero-title{
+    font-size: 3rem;
+    text-align: center;
+    max-width: 400px; /*porque quiero q siempre ocupe 2 lineas aunque se agrande la pantalla*/
+}
+
+.hero-button{
+    font-family: "Montserrat", sans-serif;
+    background-color: var(--black-color);
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    border: 1px solid var(--black-color);
+    width: fit-content;    /* es responsivo se ajusta al contenido*/
+    transition: all;  /*hace q la trasicion del hovr sea mas suave y no tan bruta*/
+    transition-duration: 300ms; 
+
+}
+
+.left-floating{
+    width: 150px;
+    position: absolute;   /*y le pongo posicion relativa a .hero para q se posicionen respecto a ese padre*/
+    bottom: 0;
+    left: 0;
+    transform: rotate(15deg) translate(0, 60%);
+    z-index: -2;
+
+}
+
+
+
+.right-floating{
+    width: 130px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: rotate(-15deg) translate(10%,62%);
+    z-index: -2;
+}
+
+.logo-bar{
+    position: absolute;
+    top: 0;
+}
+
+.hero-button:hover{
+    cursor: pointer;
+    background-color: var(--primary-color);
+    color: var(--black-color);
+    border: 1px solid var(--black-color);
+    scale: 1.025;   /*se expande de modo muy sutil*/
+}
